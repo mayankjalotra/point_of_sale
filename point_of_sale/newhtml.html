@@ -1,0 +1,85 @@
+html
+  head
+    title Point of Sale
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='css/bootstrap-responsive.css', type='text/css')
+    link(rel='stylesheet', href='css/bootstrap.css', type='text/css')
+    link(rel='stylesheet', href='css/bootstrap-responsive.min.css', type='text/css')
+    link(rel='stylesheet', href='css/pos.css', type='text/css')
+  body
+    .well(style='text-align: center; color: #fff; font-size: 24px; font-weight: 400px; background-color: #200000') POINT OF SALES
+    .container
+        .row-fluid.clearfix
+            .span12
+                #papacart.row-fluid.clearfix
+                    .span5.leftview
+                        form
+                            b
+                            input(type='text', name='order_id', style='width: 100px;', readonly='')
+                            input(type='text', name='customer', placeholder='           Customer Name', style='width: 200px;')
+                        #cartlines.row.scrl
+                            p#shoppingEmpty.shopCart(align='center')
+                                b Shopping Cart is Empty
+                            hr#pos-screen
+                        p(align='right', style='padding-right: 55px; padding-top: 30px')
+                            b(style='padding-right: 15px') Taxes:
+                                | $0.00
+                        p(align='right', style='padding-right: 55px')
+                            b(style='padding-right: 15px') Total:
+                                | $0.00
+          .row-fluid.clearfix(style='padding-top: 30px')
+            .span4
+            .span8(style='width:300px; height:300px')
+              .span3
+                button#buttonOne.btn.btn-primary.btn-block(name='button') 1
+                // <a href="#" class="btn btn-primary btn-block">1</a>
+                a.btn.btn-primary.btn-block(href='#') 4
+                a.btn.btn-primary.btn-block(href='#') 7
+                a.btn.btn-primary.btn-block(href='#', data-constant='BRO') +/-
+              .span3
+                a.btn.btn-primary.btn-block(href='#') 2
+                a.btn.btn-primary.btn-block(href='#') 5
+                a.btn.btn-primary.btn-block(href='#') 8
+                a.btn.btn-primary.btn-block(href='#', data-constant='MIN') 0
+              .span3
+                a.btn.btn-primary.btn-block(href='#') 3
+                a.btn.btn-primary.btn-block(href='#') 6
+                a.btn.btn-primary.btn-block(href='#') 9
+                a.btn.btn-primary.btn-block(href='#', data-constant='DIV') .
+              .span3
+                a.btn.btn-primary.btn-block(href='#') Qty.
+                a.btn.btn-primary.btn-block(href='#') Disc.
+                a.btn.btn-primary.btn-block(href='#', data-constant='PROC') Price
+                a.btn.btn-primary.btn-block(href='#', data-method='calculate') Del.
+              .grids
+              .grids
+                .row-fluid.clearfix
+                  .span6
+                    br
+                    #buttonInv(style='position: relative; opacity: 1; z-index: 0;')
+                      button#Cash.btn-success(name='button', style=' width:150px;height:37px') Cash
+                  .span6
+                    br
+                    #buttonCash(style='position: relative; opacity: 1; z-index: 0;')
+                      button#buttonInvoice.btn-warning(name='button', style='width:150px;height:37px') Invoice
+        .span7.line
+          .opaque
+            .row-fluid.clearfix
+              div(align='right')
+                form.form-search
+                  .input-append
+                    input.input-medium.search-query(type='text', placeholder='Search', value='')
+                    button.btn(type='submit') Search
+          #apnd-prod.opaque
+            .row-fluid.clearfix
+              br
+              p(align='center')
+                a.btn(href='#') Category »
+            br
+            br
+// jQuery (necessary for Bootstrap's JavaScript plugins)
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+// Include all compiled plugins (below), or include individual files as needed
+script(src='js/bootstrap.min.js')
+script(src='js/pos.js')
+
