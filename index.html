@@ -1,79 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Point of Sale</title>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Point of sale : " />
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap-responsive.css" type="text/css"/>
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css" type="text/css"/>
+        <link rel="stylesheet" href="css/pos.css" type="text/css"/>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Point of sale</title>
-  </head>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
 
-  <body>
+        <div class="well" style="text-align: center; color: #fff; font-size: 24px; font-weight: 400px; background-color: #200000">POINT OF SALES</div>
+        <div class="container">
+            <div class="row-fluid clearfix">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/mayankjalotra/point_of_sale">View on GitHub</a>
+                <div class="span12">
+                    <div class="row-fluid clearfix" id="papacart">
 
-          <h1 id="project_title">Point of sale</h1>
-          <h2 id="project_tagline"></h2>
+                        <div class="span5 leftview">
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/mayankjalotra/point_of_sale/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/mayankjalotra/point_of_sale/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+                            <form><b></b> <input type="text" name="order_id" style="width: 100px;" readonly=""> 
+                               
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                                    <input type="text" name="customer" placeholder="           Customer Name" style="width: 200px;">
+                            </form>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+                            <div class="row scrl" id="cartlines">
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+                                <p align="center" id="shoppingEmpty" class="shopCart"><b>Shopping Cart is Empty</b></p>
+                                <hr id="pos-screen">
+                            </div>
+                            <p align="right" style="padding-right: 55px; padding-top: 30px"><b style="padding-right: 15px">Taxes:</b>$0.00</p>
+                            <p align="right" style="padding-right: 55px"><b  style="padding-right: 15px">Total:</b>$0.00</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+                            <div class="row-fluid clearfix" style="padding-top: 30px">
+                                <div class="span4">
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+                                </div>
+                                <div class="span8" style="width:300px; height:300px">
+                                    <div class="span3">
+                                        <button name="button" class="btn btn-primary btn-block" id="buttonOne">1</button>
+                                        <!--<a href="#" class="btn btn-primary btn-block">1</a>-->
+                                        <a href="#" class="btn btn-primary btn-block">4</a>
+                                        <a href="#" class="btn btn-primary btn-block">7</a>
+                                        <a href="#" class="btn btn-primary btn-block" data-constant="BRO">+/-</a>
+                                    </div>
+                                    <div class="span3">
+                                        <a href="#" class="btn btn-primary btn-block">2</a>
+                                        <a href="#" class="btn btn-primary btn-block">5</a>
+                                        <a href="#" class="btn btn-primary btn-block">8</a>
+                                        <a href="#" class="btn btn-primary btn-block" data-constant="MIN">0</a>
+                                    </div>
+                                    <div class="span3">
+                                        <a href="#" class="btn btn-primary btn-block">3</a>
+                                        <a href="#" class="btn btn-primary btn-block">6</a>
+                                        <a href="#" class="btn btn-primary btn-block">9</a>
+                                        <a href="#" class="btn btn-primary btn-block" data-constant="DIV">.</a>
+                                    </div>
+                                    <div class="span3">
+                                        <a href="#" class="btn btn-primary btn-block">Qty.</a>
+                                        <a href="#" class="btn btn-primary btn-block">Disc.</a>
+                                        <a href="#" class="btn btn-primary btn-block" data-constant="PROC">Price</a>
+                                        <a href="#" class="btn btn-primary btn-block" data-method="calculate">Del.</a>
+                                    </div>
+                                    <div class="grids">
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+                                    </div>
+                                    <div class="grids">
+                                        <div class="row-fluid clearfix">
+                                            <div class="span6">
+                                                <br>
+                                                <div id="buttonInv" style="position: relative; opacity: 1; z-index: 0;">
+                                                    <button name="button" style=" width:150px;height:37px" class="btn-success" id="Cash">Cash</button>
+                                                </div>
+                                            </div>
+                                            <div class="span6">
+                                                <br>
+                                                <div id="buttonCash"  style="position: relative; opacity: 1; z-index: 0;">
+                                                    <button name="button" style="width:150px;height:37px" class="btn-warning" id="buttonInvoice">Invoice</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+                        <div class="span7 line">
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+                            <div class="opaque">
+                                <div class="row-fluid clearfix">
+                                    <div align="right">
+                                        <form class="form-search">
+                                            <div class="input-append">
+                                                <input type="text" class="input-medium search-query" placeholder="Search" value="" >
+                                                <button type="submit" class="btn">Search</button>
+                                            </div>
+                                        </form>
+                                    </div>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+                                </div>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+                            </div>
+                            <div class="opaque" id="apnd-prod">
+                                <div class="row-fluid clearfix"><br> 
+                                    <p align = "center">
+                                        <a class="btn" href="#">Category »</a>
+                                    </p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
+                                </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Point of sale maintained by <a href="https://github.com/mayankjalotra">mayankjalotra</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+                                <br><br>
+                            </div>
+                        </div>
 
-    
 
-  </body>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/pos.js"></script>
+    </body>
 </html>
